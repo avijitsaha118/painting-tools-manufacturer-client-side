@@ -5,13 +5,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const MyOrder = () => {
-    const [appointments, setAppointments] = useState([]);
+    const [bookings, setBookings] = useState([]);
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/booking?buyer=${user.email}`, {
+            fetch(`http://localhost:5000/booking?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -28,14 +28,14 @@ const MyOrder = () => {
                 })
                 .then(data => {
 
-                    setAppointments(data)
+                    setBookings(data)
                 });
         }
 
     }, [user])
     return (
         <div>
-            <h2>My Appointment: {appointments.length}</h2>
+            <h2>My Booking: {bookings.length}</h2>
 
             <div class="overflow-x-auto">
                 <table class="table w-full">
@@ -44,7 +44,7 @@ const MyOrder = () => {
                         <tr>
                             <th></th>
                             <th>Name</th>
-                            <th>Date</th>
+                            <th>Shipping Address</th>
                             <th>Time</th>
                             <th>Treatment</th>
                             <th>Payment</th>
@@ -52,11 +52,11 @@ const MyOrder = () => {
                     </thead>
                     <tbody>
                         {
-                            appointments.map((a, index) => <tr key={a._id}>
+                         bookings.map((a, index) => <tr key={a._id}>
                                 <th>{index + 1}</th>
-                                <td>{a.patientName}</td>
-                                <td>{a.date}</td>
-                                <td>{a.slot}</td>
+                                <td>{a.name}</td>
+                                <td>{a.address}</td>
+                                <td>{a.price}</td>
                                 <td>{a.treatment}</td>
                                 <td>
                                     {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-success'>Payment</button></Link>}

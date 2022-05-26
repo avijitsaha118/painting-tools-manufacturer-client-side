@@ -5,7 +5,7 @@ const Review = ({ item }) => {
   return (
     <div class="card flex lg:card-side bg-base-100 shadow-xl">
       <div class="avatar">
-        <div class="w-20 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+        <div class="h-16 w-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
           <img src={img} alt="avatar" />
         </div>
       </div>

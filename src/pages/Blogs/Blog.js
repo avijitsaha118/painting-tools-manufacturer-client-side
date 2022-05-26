@@ -4,7 +4,7 @@ const Blog = () => {
         <div>
             <h2 className='text-center mt-2'>Question and Answer</h2>
 
-            <h3 className='mt-3'>Question-01: <strong>How will you improve the performance of a React Application?</strong></h3>
+            <h3 className='mt-3'><strong>Question-01: How will you improve the performance of a React Application?</strong></h3>
 
             <h2> <strong>Answer:</strong></h2>
             <p>Using React in application brings better performance and minimizes the number of DOM operations used to build faster user interfaces as it was built keeping performance in mind. React applications very fast is the DOM, but it sometimes makes many irrelevant components render the tree. As a result, UI might glitch, and sometimes developers may get hesitant to continue with React.
@@ -14,7 +14,7 @@ const Blog = () => {
                 <br/>Always call multiple APIs parallelly. Sequential calls affect load time.
             </p>
 
-            <h3 className='mt-3'>Question-02: <strong>What are the different ways to manage a state in a React application?</strong></h3>
+            <h3 className='mt-3'><strong>Question-02: What are the different ways to manage a state in a React application?</strong></h3>
             <h2> <strong>Answer:</strong></h2>
             <p>
             There are four main types of state need to properly manage in React application:
@@ -23,7 +23,7 @@ const Blog = () => {
             <br/> This are also help to state management in react; Communication State, Data State, Control State, Session State, Location State.
             </p>
 
-            <h3 className='mt-3'>Question-03: <strong>How does prototypical inheritance work?</strong></h3>
+            <h3 className='mt-3'><strong>Question-03: How does prototypical inheritance work?</strong></h3>
             <h2> <strong>Answer:</strong></h2>
             <p>
             JavaScript is a prototype-based, Object Oriented programming language. After the ES6 updates, JavaScript allowed for “prototypal inheritance”, meaning that objects and methods can be shared, extended, and copied.
@@ -33,7 +33,7 @@ const Blog = () => {
             By default, the JavaScript engine provides you with a built-in Object() function and an anonymous object that can be referenced by the Object.prototype.
             </p>
 
-            <h3 className='mt-3'>Question-04: <strong> Why you do not set the state directly in React?</strong> For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts.</h3>
+            <h3 className='mt-3'><strong>Question-04: Why you do not set the state directly in React?</strong> For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts.</h3>
             <h2> <strong>Answer:</strong></h2>
             <p>
             If we set state directly, calling the setState() afterward may just replace the update we made.
@@ -43,11 +43,11 @@ We will lose control of the state across all components.
 <br/> So, it's obvious from the statement that if we mutate the state directly, it will change the reference of the state in the previous virtual DOM as well. So, React won’t be able to see that there is a change of the state and so it won't be reflected in the original DOM until we reload.
             </p>
 
-            <h3 className='mt-3'>Question-05: <strong>You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</strong></h3>
+            <h3 className='mt-3'><strong>Question-05: You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</strong></h3>
             <h2> <strong>Answer:</strong></h2>
             <p></p>
 
-            <h3 className='mt-3'>Question-06: <strong>What is a unit test? Why should write unit tests?</strong></h3>
+            <h3 className='mt-3'><strong>Question-06: What is a unit test? Why should write unit tests?</strong></h3>
             <h2> <strong>Answer:</strong></h2>
             <p>
             JavaScript Unit Testing is a method where JavaScript test code is written for a web page or web application module. It is then combined with HTML as an inline event handler and executed in the browser to test if all functionalities are working as desired. These unit tests are then organized in the test suite.

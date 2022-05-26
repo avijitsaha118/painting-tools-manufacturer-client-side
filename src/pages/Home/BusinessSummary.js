@@ -6,7 +6,7 @@ import { faBoxesPacking, faBoxOpen, faComment, faFlag, faFlagCheckered, faPeople
 const BusinessSummary = () => {
     return (
         <div>
-            <h1 className='text-center text-2xl mt-3'>Millions of Business Trust Us</h1>
+            <h4 className='text-center mt-5 text-title text-2xl'>Millions of Business Trust Us</h4>
             <div class="stats stats-vertical lg:stats-horizontal shadow grid grid-cols-4 gap-4">
                 <div class="stat">
                     <div class="stat-title"><i><FontAwesomeIcon className='ml-3' icon={faPeopleGroup}></FontAwesomeIcon></i> <br />Client</div>

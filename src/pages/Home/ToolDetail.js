@@ -17,7 +17,7 @@ const ToolDetail = () => {
 
     const onSubmit = async data => {
         const formData = new FormData();
-
+console.log(item.name);
 
 
         const booking = {
@@ -52,7 +52,8 @@ const ToolDetail = () => {
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="text" placeholder={item.name} {...register("First name", { required: true, maxLength: 80 })} />
+                <input type="text" placeholder={item.name} {...register("name", { required: true, maxLength: 80 })} />
+            
                 <input type="text" placeholder="Last name" {...register("Last name", { required: true, maxLength: 100 })} />
                 <input type="text" placeholder="Email" {...register("Email", { required: true, pattern: /^\S+@\S+$/i })} />
                 <input type="tel" placeholder="Mobile number" {...register("Mobile number", { required: true, minLength: 6, maxLength: 12 })} />

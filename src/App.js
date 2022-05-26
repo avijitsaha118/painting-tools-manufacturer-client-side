@@ -6,11 +6,13 @@ import AddProduct from './pages/Dashboard/AddProduct';
 import Dashboard from './pages/Dashboard/Dashboard';
 import ManageProducts from './pages/Dashboard/ManageProduct';
 import MyOrder from './pages/Dashboard/MyOrder';
+import MyProfile from './pages/Dashboard/MyProfile';
 import RequireAdmin from './pages/Dashboard/RequireAdmin';
 import Users from './pages/Dashboard/Users';
 import Home from './pages/Home/Home';
 import ToolDetail from './pages/Home/ToolDetail';
 import ToolDetails from './pages/Home/ToolDetails';
+import ToolPurchase from './pages/Home/ToolPurchase';
 import Login from './pages/Login/Login';
 import Register from './pages/Login/Register';
 import RequireAuth from './pages/Login/RequireAuth';
@@ -34,6 +36,7 @@ function App() {
         </RequireAuth>}>
           <Route index element={<MyOrder></MyOrder>}></Route>
           <Route path='addreview' element={<AddAReview></AddAReview>}></Route>
+          <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
           {/* <Route path='payment/:id' element={<Payment></Payment>}></Route> */}
           <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
           <Route path='adddoctor' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
@@ -47,7 +50,7 @@ function App() {
 
         <Route path='/item/:itemId' element={
           <RequireAuth>
-            <ToolDetail></ToolDetail>
+            <ToolPurchase></ToolPurchase>
           </RequireAuth>
 
         }></Route>

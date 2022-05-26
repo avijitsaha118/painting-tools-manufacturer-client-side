@@ -1,13 +1,13 @@
 import React from 'react';
 import { useEffect, useState } from "react";
-import Review from './Review';
+import Profile from './Profile';
 
-const Reviews = () => {
+const Profiles = () => {
 
         const [items, setItems] = useState([]);
     
         useEffect(() => {
-            fetch('http://localhost:5000/myreview')
+            fetch('http://localhost:5000/myprofile')
                 .then(res => res.json())
                 .then(data => setItems(data))
         }, []);
@@ -17,17 +17,17 @@ const Reviews = () => {
 
     return (
         <>
-        <h4 className='text-center mt-5 text-title text-2xl'>Client Reviews</h4>
+        <h4 className='text-center mt-5 text-title text-2xl'>Profile </h4>
         <div className='grid grid-cols-3 gap-4'>
             {
-                items.slice(0, 6).map(item => <Review
+                items.map(item => <Profile
                     key={item._id}
                     item={item}
-                ></Review>)
+                ></Profile>)
             }
         </div>
         </>
     );
 };
 
-export default Reviews;
+export default Profiles;
