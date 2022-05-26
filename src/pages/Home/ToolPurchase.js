@@ -34,7 +34,7 @@ const ToolPurchase = () => {
             address: address,
             info: info
         }
-    
+
 
         if (quantity < item.minimum) {
             toast.error("You cant booking", { id: 'defined' })
@@ -64,40 +64,50 @@ const ToolPurchase = () => {
     return (
         <div>
 
-            <p>{user?.displayName}</p>
-            <p>{user?.email}</p>
-            <p>{item.name}</p>
-            <p>{item.quantity}</p>
-            <p>{item.description}</p>
-            <p>{item.minimum}</p>
-            <p>{item.price}</p>
-            <p></p>
+            <div class="hero min-h-screen bg-base-200">
+                <div class="hero-content flex-col lg:flex-row">
+                    <div>
+                        <div class="card card-compact w-96 bg-base-100 shadow-xl">
+                            <figure><img src={item.img} alt="painting-product" /></figure>
+                            <div class="card-body">
+                                <h2 class="card-title">{item.name}</h2>
+                                <p>{item.description}</p>
 
-            <div>
-                <form onSubmit={bookingHandler}>
-                    <br />
-                    <input className='w-full mb-2' type="email" value={user?.email} name="email" placeholder='email' required readOnly disabled></input>
-                    <br />
-                    <input className='w-full mb-2' type="text" value={user?.displayName} name="buyerName" placeholder='Item Name' autoComplete='off' required readOnly></input>
-                    <br />
-                    <input className='w-full mb-2' type="text" name="toolName" value={item.name} placeholder="Tool Name" readOnly disabled></input>
-                    <br />
-                    <input className='w-full mb-2' type="number" name="minimum" placeholder={item.minimum}></input>
-                    <br />
-                    <input className='w-full mb-2' type="number" name="quantity" value={item.quantity} placeholder="" required readOnly disabled></input>
-                    <br />
-                    <input className='w-full mb-2' type="number" name="price" value={item.price} placeholder="" required readOnly disabled></input>
-                    <br />
-                    <input className='w-full mb-2' type="number" name="number" placeholder="Your Contact Number" required></input>
-                    <br />
-                    <input className='w-full mb-2' type="text" name="address" placeholder='Your Address' required></input>
-                    <br />
-                    <input className='w-full mb-2' type="text" name="info" placeholder='Additional Information' required></input>
-                    <br />
-                    <input className='btn btn-secondary' type='submit' value='Booking'></input>
-                </form>
-            
+                            </div>
+                        </div>
+                    </div>
 
+                    <div>
+                        <form onSubmit={bookingHandler}>
+                            <br />
+                            <label>Your Email:</label>
+                            <input className='w-full mb-2' type="email" value={user?.email} name="email" placeholder='email' required readOnly disabled></input>
+                            <br />
+                            <label>Your Name:</label>
+                            <input className='w-full mb-2' type="text" value={user?.displayName} name="buyerName" placeholder='Item Name' disabled required readOnly></input>
+                            <br />
+                            <label>Item Name:</label>
+                            <input className='w-full mb-2' type="text" name="toolName" value={item.name} placeholder="Tool Name" readOnly disabled></input>
+                            <br />
+                            <label>Minimum Order:</label>
+                            <input className='w-full mb-2' type="number" name="minimum" placeholder={item.minimum}></input>
+                            <br />
+                            <label>Available Quantity:</label>
+                            <input className='w-full mb-2' type="number" name="quantity" value={item.quantity} placeholder="" required readOnly disabled></input>
+                            <br />
+                            <label>Per Unit Price:</label>
+                            <input className='w-full mb-2' type="number" name="price" value={item.price} placeholder="" required readOnly disabled></input>
+                            <br />
+                            <input className='w-full mb-2' type="number" name="number" placeholder="Your Contact Number" required></input>
+                            <br />
+                            <input className='w-full mb-2' type="text" name="address" placeholder='Your Address' required></input>
+                            <br />
+                            <input className='w-full mb-2' type="text" name="info" placeholder='Additional Information' required></input>
+                            <br />
+                            <input className='btn btn-secondary' type='submit' value='Booking'></input>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     );
