@@ -4,7 +4,7 @@ const MyPortfolio = () => {
     return (
         <>
         <h1 class="text-center text-2xl">My Portfolio</h1>
-        <div class="grid grid-cols-4 gap-4 ">
+        <div class="grid grid-cols-4 gap-4">
             <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                 <div class="p-5">
 
