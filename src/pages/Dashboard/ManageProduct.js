@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { useQuery } from 'react-query';
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 import Loading from '../../shared/Loading';
 import DeleteConfirmation from './DeleteConfirmation';
 import ProductRow from './ProductRow';
 
+const queryClient = new QueryClient();
+
 const ManageProducts = () => {
     const [deletingProduct, setDeletingProduct] = useState(null);
-    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:5000/product', {
+    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:5000/item', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
@@ -54,4 +56,9 @@ const ManageProducts = () => {
     );
 };
 
-export default ManageProducts;
+export default function Wraped() {
+    return (<QueryClientProvider client={queryClient}>
+        <ManageProducts />
+    </QueryClientProvider>
+    );
+}

@@ -22,12 +22,13 @@ const ToolPurchase = () => {
         const info = event.target.info.value;
         const minimum = event.target.minimum.value;
         const quantity = parseInt(event.target.quantity.value);
+        
         const data = {
             buyerName: buyerName,
             email: email,
             toolName: toolName,
             minimum: minimum,
-            quantity: quantity + 0,
+            quantity: quantity,
             price: price,
             number: number,
             address: address,
@@ -79,13 +80,13 @@ const ToolPurchase = () => {
                     <br />
                     <input className='w-full mb-2' type="text" value={user?.displayName} name="buyerName" placeholder='Item Name' autoComplete='off' required readOnly></input>
                     <br />
-                    <input className='w-full mb-2' type="text" name="toolName" placeholder={item.name} readOnly disabled></input>
+                    <input className='w-full mb-2' type="text" name="toolName" value={item.name} placeholder="Tool Name" readOnly disabled></input>
                     <br />
                     <input className='w-full mb-2' type="number" name="minimum" placeholder={item.minimum}></input>
                     <br />
-                    <input className='w-full mb-2' type="number" name="quantity" placeholder={item.quantity} required readOnly disabled></input>
+                    <input className='w-full mb-2' type="number" name="quantity" value={item.quantity} placeholder="" required readOnly disabled></input>
                     <br />
-                    <input className='w-full mb-2' type="number" name="price" placeholder={item.price} required readOnly disabled></input>
+                    <input className='w-full mb-2' type="number" name="price" value={item.price} placeholder="" required readOnly disabled></input>
                     <br />
                     <input className='w-full mb-2' type="number" name="number" placeholder="Your Contact Number" required></input>
                     <br />

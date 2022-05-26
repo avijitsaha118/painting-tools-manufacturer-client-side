@@ -1,16 +1,14 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useQuery } from 'react-query';
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 import Loading from '../../shared/Loading';
-
+const queryClient = new QueryClient();
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
     const { data: items, isLoading } = useQuery('items', () => fetch('http://localhost:5000/item').then(res => res.json()))
 
-    // 3 ways to store image; third pirty, own storage(server file system), database
-    // YUP: to valided file (YUP file validation for react hook form- search)
 
     const imageStorageKey = 'e7129c29e256c12c32f599e89fea3719';
 
@@ -28,22 +26,22 @@ const AddProduct = () => {
             .then(result => {
                 if (result.success) {
                     const img = result.data.url;
-                    const product = {
+                    const items = {
                         name: data.name,
-                        price: data.email,
+                        price: data.price,
                         description: data.description,
                         minimum: data.minimum,
                         quantity: data.quantity,
                         img: img
                     }
                     //send to your database
-                    fetch('http://localhost:5000/product', {
+                    fetch('http://localhost:5000/item', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
                             authorization: `Bearer ${localStorage.getItem('accessToken')}`
                         },
-                        body: JSON.stringify(product)
+                        body: JSON.stringify(items)
                     })
                         .then(res => res.json())
                         .then(inserted => {
@@ -64,13 +62,13 @@ const AddProduct = () => {
     }
     return (
         <div>
-            <h2 className='text-2xl text-purple-700'>Add a new doctor</h2>
+            <h2 className='text-2xl text-purple-700'>Add a new Tool Item</h2>
 
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
-                        <span className="label-text">Product Name</span>
+                        <span className="label-text">Tool Name</span>
 
                     </label>
                     <input type="text" placeholder="Product Name" className="input input-bordered w-full max-w-xs"
@@ -177,11 +175,16 @@ const AddProduct = () => {
                     </label>
                 </div>
 
-                <input className='btn w-full max-w-xs text-white' type="submit" value="Add a Doctor" />
+                <input className='btn btn-primaryw-full max-w-xs' type="submit" value="Add a Product" />
             </form>
 
         </div>
     );
 };
 
-export default AddProduct;
+export default function Wraped() {
+    return (<QueryClientProvider client={queryClient}>
+        <AddProduct />
+    </QueryClientProvider>
+    );
+}
