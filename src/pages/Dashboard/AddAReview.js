@@ -25,7 +25,7 @@ const AddAReview = () => {
             img: event.target.img.value,
         }
 
-        axios.post('https://infinite-refuge-16711.herokuapp.com/myreview', myreview)
+        axios.post('http://localhost:5000/myreview', myreview)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {

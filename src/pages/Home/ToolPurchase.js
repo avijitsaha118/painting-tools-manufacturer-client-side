@@ -42,7 +42,7 @@ const ToolPurchase = () => {
             toast.error("You cant booking", { id: 'undefined' })
         }
         else {
-            fetch(`https://infinite-refuge-16711.herokuapp.com/booking`, {
+            fetch(`http://localhost:5000/booking`, {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {

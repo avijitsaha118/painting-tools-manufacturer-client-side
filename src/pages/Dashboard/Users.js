@@ -1,14 +1,16 @@
 import React from 'react';
-import { useQuery } from 'react-query';
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 import Loading from '../../shared/Loading';
-import UserRow from './UserRow';
+import UserRow from './../Dashboard//UserRow';
 
+const queryClient = new QueryClient();
 const Users = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://infinite-refuge-16711.herokuapp.com/user', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
+
     }).then(res => res.json()));
     if (isLoading) {
         return <Loading></Loading>
@@ -33,7 +35,7 @@ const Users = () => {
                         {
                             users.map(user => <UserRow
                                 key={user._id}
-                                refetch={refetch}
+                                 refetch={refetch}
                                 user={user}
                             ></UserRow>)
                         }
@@ -45,4 +47,9 @@ const Users = () => {
     );
 };
 
-export default Users;
+export default function Wraped() {
+    return (<QueryClientProvider client={queryClient}>
+        <Users />
+    </QueryClientProvider>
+    );
+}

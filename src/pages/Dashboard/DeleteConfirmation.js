@@ -6,7 +6,7 @@ const DeleteConfirmation = ({ deletingProduct, refetch, setDeletingProduct  }) =
     const { name ,email } = deletingProduct;
 
     const handleDelete = () => {
-        fetch(`https://infinite-refuge-16711.herokuapp.com/product/${email}`, {
+        fetch(`http://localhost:5000/product/${email}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
