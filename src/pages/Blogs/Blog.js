@@ -43,11 +43,11 @@ We will lose control of the state across all components.
 <br/> So, it's obvious from the statement that if we mutate the state directly, it will change the reference of the state in the previous virtual DOM as well. So, React won’t be able to see that there is a change of the state and so it won't be reflected in the original DOM until we reload.
             </p>
 
-            <h3 className='mt-3'><strong>Question-05: You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</strong></h3>
+            {/* <h3 className='mt-3'><strong>Question-05: You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</strong></h3>
             <h2> <strong>Answer:</strong></h2>
-            <p></p>
+            <p></p> */}
 
-            <h3 className='mt-3'><strong>Question-06: What is a unit test? Why should write unit tests?</strong></h3>
+            <h3 className='mt-3'><strong>Question-05: What is a unit test? Why should write unit tests?</strong></h3>
             <h2> <strong>Answer:</strong></h2>
             <p>
             JavaScript Unit Testing is a method where JavaScript test code is written for a web page or web application module. It is then combined with HTML as an inline event handler and executed in the browser to test if all functionalities are working as desired. These unit tests are then organized in the test suite.
