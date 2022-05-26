@@ -13,7 +13,7 @@ const CheckoutForm = ({ item }) => {
     const { _id, price, name, email } = item;
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://infinite-refuge-16711.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -88,7 +88,7 @@ const CheckoutForm = ({ item }) => {
                   transactionId : paymentIntent.id
               }
 
-            fetch(`http://localhost:5000/booking/${_id}`, {
+            fetch(`https://infinite-refuge-16711.herokuapp.com/booking/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

@@ -8,7 +8,7 @@ const queryClient = new QueryClient();
 
 const ManageProducts = () => {
     const [deletingProduct, setDeletingProduct] = useState(null);
-    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:5000/item', {
+    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('https://infinite-refuge-16711.herokuapp.com/item', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }

@@ -22,7 +22,7 @@ const BookingModal = ({ toolName, setToolName, refetch }) => {
 
         }
 
-        fetch('http://localhost:5000/booking', {
+        fetch('https://infinite-refuge-16711.herokuapp.com/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

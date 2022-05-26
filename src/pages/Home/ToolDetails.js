@@ -32,7 +32,7 @@ const ToolDetails = () => {
 
         }
 
-            fetch(`http://localhost:5000/booking/${itemId}`,{
+            fetch(`https://infinite-refuge-16711.herokuapp.com/booking/${itemId}`,{
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

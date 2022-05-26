@@ -22,7 +22,7 @@ const MyProfileUpdate = () => {
             img: event.target.img.value,
         }
 
-        axios.put('http://localhost:5000/myprofile/:id', myprofile)
+        axios.put('https://infinite-refuge-16711.herokuapp.com/myprofile/:id', myprofile)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {
