@@ -32,7 +32,7 @@ console.log(item.name);
 
         }
 
-        fetch(`https://infinite-refuge-16711.herokuapp.com/booking/${itemId}`, {
+        fetch(`http://localhost:5000/booking/${itemId}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

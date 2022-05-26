@@ -23,7 +23,7 @@ const MyProfile = () => {
             img: event.target.img.value,
         }
 
-        axios.post('https://infinite-refuge-16711.herokuapp.com/myprofile', myprofile)
+        axios.post('http://localhost:5000/myprofile', myprofile)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {

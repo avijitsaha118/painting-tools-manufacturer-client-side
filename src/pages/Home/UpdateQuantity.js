@@ -8,7 +8,7 @@ const UpdateQuantity = () => {
 
     const [item, setItem] = useItemDetail(itemId);
     useEffect(() => {
-        const url = `https://infinite-refuge-16711.herokuapp.com/item/${itemId}`;
+        const url = `http://localhost:5000/item/${itemId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data));
@@ -23,7 +23,7 @@ const UpdateQuantity = () => {
         const updatedItem = { quantity };
 
         //send data to the server
-       const url= `https://infinite-refuge-16711.herokuapp.com/item/${itemId}`;
+       const url= `http://localhost:5000/item/${itemId}`;
        fetch(url, {
             method: 'PUT',
             headers: {

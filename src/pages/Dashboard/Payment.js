@@ -11,7 +11,7 @@ const queryClient = new QueryClient();
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `https://infinite-refuge-16711.herokuapp.com/booking/${id}`;
+    const url = `http://localhost:5000/booking/${id}`;
     const { data: item, isLoading } = useQuery(['booking', id], () => fetch(url, {
         method: 'GET',
         headers: {

@@ -7,7 +7,7 @@ const Reviews = () => {
         const [items, setItems] = useState([]);
     
         useEffect(() => {
-            fetch('https://infinite-refuge-16711.herokuapp.com/myreview')
+            fetch('http://localhost:5000/myreview')
                 .then(res => res.json())
                 .then(data => setItems(data))
         }, []);
