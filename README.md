@@ -5,9 +5,7 @@ This project is online based manufacturer product selling site.
 
 ## Live Link
 
-https://tools-manufacturer-website.web.app/
-
-Please Visit: 
+Please Visit: https://tools-manufacturer-website.web.app/
 
 ## Features and Functionality
 
