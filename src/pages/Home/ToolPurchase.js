@@ -22,7 +22,7 @@ const ToolPurchase = () => {
         const info = event.target.info.value;
         const minimum = event.target.minimum.value;
         const quantity = parseInt(event.target.quantity.value);
-        
+
         const data = {
             buyerName: buyerName,
             email: email,
@@ -43,7 +43,7 @@ const ToolPurchase = () => {
             toast.error("You cant booking", { id: 'undefined' })
         }
         else {
-            fetch(`http://localhost:5000/booking`, {
+            fetch(`https://infinite-refuge-16711.herokuapp.com/booking`, {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {

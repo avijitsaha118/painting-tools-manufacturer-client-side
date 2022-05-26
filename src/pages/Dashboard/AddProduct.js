@@ -7,7 +7,7 @@ const queryClient = new QueryClient();
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
-    const { data: items, isLoading } = useQuery('items', () => fetch('http://localhost:5000/item').then(res => res.json()))
+    const { data: items, isLoading } = useQuery('items', () => fetch('https://infinite-refuge-16711.herokuapp.com/item').then(res => res.json()))
 
 
     const imageStorageKey = 'e7129c29e256c12c32f599e89fea3719';
@@ -35,7 +35,7 @@ const AddProduct = () => {
                         img: img
                     }
                     //send to your database
-                    fetch('http://localhost:5000/item', {
+                    fetch('https://infinite-refuge-16711.herokuapp.com/item', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

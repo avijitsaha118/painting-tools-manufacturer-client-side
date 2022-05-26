@@ -7,7 +7,7 @@ const Profiles = () => {
         const [items, setItems] = useState([]);
     
         useEffect(() => {
-            fetch('http://localhost:5000/myprofile')
+            fetch('https://infinite-refuge-16711.herokuapp.com/myprofile')
                 .then(res => res.json())
                 .then(data => setItems(data))
         }, []);
