@@ -17,8 +17,8 @@ const Reviews = () => {
 
     return (
         <>
-        <h4 className='text-center mt-5 text-title text-2xl'>Client Reviews</h4>
-        <div className='grid grid-cols-3 gap-4'>
+        <h4 className='text-center mt-6 text-title text-2xl'>Client Reviews</h4>
+        <div className='grid lg:grid-cols-3 gap-4 sm: grid-cols-1 mt-5'>
             {
                 items.slice(0, 6).map(item => <Review
                     key={item._id}

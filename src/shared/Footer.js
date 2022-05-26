@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer class="text-center lg:text-left bg-gray-100 text-gray-600 sticky top-[100vh]">
+        <footer class="text-center lg:text-left bg-gray-100 text-gray-600 sticky">
             <div class="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
                 <div class="mr-12 hidden lg:block">
                     <span>Get connected with us on social networks:</span>
@@ -167,7 +167,7 @@ const Footer = () => {
                 </div>
             </div>
             <div class="text-center p-6 bg-gray-200">
-                <span>© 2021 Copyright:</span>
+                <span>© 2022 Copyright:</span>
                 <a class="text-gray-600 font-semibold" href="https://tailwind-elements.com/">Tailwind Elements</a>
             </div>
         </footer>
