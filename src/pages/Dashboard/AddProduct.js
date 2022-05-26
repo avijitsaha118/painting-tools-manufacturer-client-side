@@ -7,7 +7,7 @@ import Loading from '../../shared/Loading';
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
-    const { data: items, isLoading } = useQuery('items', () => fetch('http://localhost:5000/item').then(res => res.json()))
+    const { data: items, isLoading } = useQuery('items', () => fetch('https://infinite-refuge-16711.herokuapp.com/item').then(res => res.json()))
 
     // 3 ways to store image; third pirty, own storage(server file system), database
     // YUP: to valided file (YUP file validation for react hook form- search)
@@ -37,7 +37,7 @@ const AddProduct = () => {
                         img: img
                     }
                     //send to your database
-                    fetch('http://localhost:5000/product', {
+                    fetch('https://infinite-refuge-16711.herokuapp.com/product', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
