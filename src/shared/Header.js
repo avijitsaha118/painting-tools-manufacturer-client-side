@@ -15,25 +15,19 @@ const Header = ({ children }) => {
     }
 
     const menuItems = <>
-        <li><NavLink className='rounded-lg' to="/">Home</NavLink></li>
-        {/* <li><NavLink className='rounded-lg' to="/services">Services</NavLink></li>
-        <li><NavLink className='rounded-lg' to="/about">About</NavLink></li> */}
         <li><NavLink className='rounded-lg' to="/blogs">Blogs</NavLink></li>
         <li><NavLink className='rounded-lg' to="/reviews">Reviews</NavLink></li>
         <li><NavLink className='rounded-lg' to="/myportfolio">My Portfolio</NavLink></li>
-        {/* <li><NavLink className='rounded-lg' to="/login">Login</NavLink></li> */}
-        <li class="dropdown dropdown-hover dropdown-end">
-            <label tabIndex="0" class="btn btn-primary btn-outline m-1 rounded-lg">Book Now</label>
-            <ul tabIndex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                <li><a>Item 1</a></li>
-                <li><a>Item 2</a></li>
-            </ul>
-        </li>
 
         {
-            user && <li><NavLink className='rounded-lg' to="/dashboard">Dashboard</NavLink></li>
+            user &&
+            <li class="dropdown dropdown-hover dropdown-end">
+                <label tabIndex="0" class="btn btn-primary btn-outline m-1 rounded-lg">
+                    <NavLink className='rounded-lg' to="/dashboard">Dashboard</NavLink>
+                </label>
+            </li>
         }
-        <li>{user ? <button className="btn btn-ghost" onClick={logout}>Sign Out</button> : <Link className='rounded-lg' to="/login">Login</Link>}</li>
+        <li>{user ? <button className="btn btn-ghost mt-1" onClick={logout}>Sign Out</button> : <Link className='rounded-lg' to="/login">Login</Link>}</li>
 
 
     </>
@@ -43,7 +37,11 @@ const Header = ({ children }) => {
             <div class="drawer-content flex flex-col">
 
                 <div class="w-full navbar bg-base-100 px-20 sticky top-0 z-50">
-                    <div class="flex-1 px-2 mx-2 text-2xl">Tools Manufacturer</div>
+                    <div class="flex-1 px-2 mx-2 text-2xl">
+                        <Link to='/home'>Wholesale Tools Seller</Link>
+                    </div>
+
+                    <span className='mt-1'><button className="btn btn-sm">Hot Products</button></span>
                     <div class="flex-none lg:hidden">
                         <label for="my-drawer-3" class="btn btn-square btn-ghost">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
