@@ -11,6 +11,7 @@ import Payment from './pages/Dashboard/Payment';
 import RequireAdmin from './pages/Dashboard/RequireAdmin';
 import Users from './pages/Dashboard/Users';
 import Home from './pages/Home/Home';
+import SelectedTools from './pages/Home/SelectedTools';
 import ToolDetail from './pages/Home/ToolDetail';
 import ToolDetails from './pages/Home/ToolDetails';
 import ToolPurchase from './pages/Home/ToolPurchase';
@@ -47,6 +48,7 @@ function App() {
 
 
         <Route path='/blogs' element={<Blog></Blog>}></Route>
+        <Route path='/products' element={<SelectedTools></SelectedTools>}></Route>
         <Route path='/myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/reviews' element={<Reviews></Reviews>}></Route>
 
