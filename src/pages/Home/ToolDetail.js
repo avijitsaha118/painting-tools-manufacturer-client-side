@@ -32,7 +32,7 @@ console.log(item.name);
 
         }
 
-        fetch(`https://infinite-refuge-16711.herokuapp.com/booking/${itemId}`, {
+        fetch(`https://paiting-tools-manufacturer-server-side.vercel.app/booking/${itemId}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

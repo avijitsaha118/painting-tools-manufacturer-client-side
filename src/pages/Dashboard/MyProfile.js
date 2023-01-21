@@ -23,7 +23,7 @@ const MyProfile = () => {
             img: event.target.img.value,
         }
 
-        axios.post('https://infinite-refuge-16711.herokuapp.com/myprofile', myprofile)
+        axios.post('https://paiting-tools-manufacturer-server-side.vercel.app/myprofile', myprofile)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {

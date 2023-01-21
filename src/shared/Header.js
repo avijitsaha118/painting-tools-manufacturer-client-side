@@ -4,6 +4,8 @@ import { signOut } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../firebase.init';
+import { AiFillFire } from "react-icons/ai";
+
 
 const Header = ({ children }) => {
 
@@ -15,14 +17,14 @@ const Header = ({ children }) => {
     }
 
     const menuItems = <>
-        <li><NavLink className='rounded-lg' to="/blogs">Blogs</NavLink></li>
-        <li><NavLink className='rounded-lg' to="/reviews">Reviews</NavLink></li>
-        <li><NavLink className='rounded-lg' to="/myportfolio">My Portfolio</NavLink></li>
+        <li><NavLink className='rounded-lg hover:font-bold' to="/blogs">Blogs</NavLink></li>
+        <li><NavLink className='rounded-lg hover:font-bold' to="/reviews">Reviews</NavLink></li>
+        <li><NavLink className='rounded-lg hover:font-bold' to="/myportfolio">My Portfolio</NavLink></li>
 
         {
             user &&
             <li class="dropdown dropdown-hover dropdown-end">
-                <label tabIndex="0" class="btn btn-primary btn-outline m-1 rounded-lg">
+                <label tabIndex="0" class="btn btn-error btn-outline m-1 rounded-lg">
                     <NavLink className='rounded-lg' to="/dashboard">Dashboard</NavLink>
                 </label>
             </li>
@@ -36,12 +38,12 @@ const Header = ({ children }) => {
             <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col">
 
-                <div class="w-full navbar bg-base-100 px-20 sticky top-0 z-50">
+                <div class="w-full navbar bg-base-100 text-white px-20 sticky top-0 z-50">
                     <div class="flex-1 px-2 mx-2 text-2xl">
-                        <Link to='/home'>Wholesale Tools Seller</Link>
+                        <Link to='/home'>Paintbrush Wholesaler</Link>
                     </div>
 
-                    <span className='mt-1'><Link to='/products'><button className="btn btn-sm hover:bg-red-300">Hot Products</button></Link></span>
+                    <span className='mt-1'><Link to='/products'><button className="btn btn-sm hover:bg-red-600 hover:text-white">Hot Products<AiFillFire className='ml-1 hover:text-red-300'></AiFillFire></button></Link></span>
                     <div class="flex-none lg:hidden">
                         <label for="my-drawer-3" class="btn btn-square btn-ghost">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -60,7 +62,7 @@ const Header = ({ children }) => {
             </div>
             <div class="drawer-side">
                 <label for="my-drawer-3" class="drawer-overlay"></label>
-                <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
+                <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-white">
 
                     {menuItems}
 

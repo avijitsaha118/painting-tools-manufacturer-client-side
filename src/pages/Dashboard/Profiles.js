@@ -7,7 +7,7 @@ const Profiles = () => {
         const [items, setItems] = useState([]);
     
         useEffect(() => {
-            fetch('https://infinite-refuge-16711.herokuapp.com/myprofile')
+            fetch('https://paiting-tools-manufacturer-server-side.vercel.app/myprofile')
                 .then(res => res.json())
                 .then(data => setItems(data))
         }, []);

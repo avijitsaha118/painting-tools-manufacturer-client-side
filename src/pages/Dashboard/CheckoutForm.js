@@ -13,7 +13,7 @@ const CheckoutForm = ({ item }) => {
     const { _id, price, name, email } = item;
 
     useEffect(() => {
-        fetch('https://infinite-refuge-16711.herokuapp.com/create-payment-intent', {
+        fetch('https://paiting-tools-manufacturer-server-side.vercel.app/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -88,7 +88,7 @@ const CheckoutForm = ({ item }) => {
                   transactionId : paymentIntent.id
               }
 
-            fetch(`https://infinite-refuge-16711.herokuapp.com/booking/${_id}`, {
+            fetch(`https://paiting-tools-manufacturer-server-side.vercel.app/booking/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

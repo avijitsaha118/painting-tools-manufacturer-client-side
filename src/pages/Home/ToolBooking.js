@@ -29,7 +29,7 @@ const ToolBooking = () => {
             info: event.target.info.value,
         }
 
-        axios.post(`https://infinite-refuge-16711.herokuapp.com/booking/${itemId}`, mybooking)
+        axios.post(`https://paiting-tools-manufacturer-server-side.vercel.app/booking/${itemId}`, mybooking)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {

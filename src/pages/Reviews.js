@@ -7,7 +7,7 @@ const Reviews = () => {
         const [items, setItems] = useState([]);
     
         useEffect(() => {
-            fetch('https://infinite-refuge-16711.herokuapp.com/myreview')
+            fetch('https://paiting-tools-manufacturer-server-side.vercel.app/myreview')
                 .then(res => res.json())
                 .then(data => setItems(data))
         }, []);
@@ -17,8 +17,8 @@ const Reviews = () => {
 
     return (
         <>
-        <h4 className='text-center mt-6 text-title text-2xl'>Client Reviews</h4>
-        <div className='grid lg:grid-cols-3 gap-4 sm: grid-cols-1 mt-5'>
+        <h4 className='text-center text-title text-2xl mt-16'>Client Reviews</h4>
+        <div className='grid lg:grid-cols-3 gap-4 sm: grid-cols-1 mt-6 ml-5 mr-5 rounded shadow-xl'>
             {
                 items.slice(0, 6).map(item => <Review
                     key={item._id}

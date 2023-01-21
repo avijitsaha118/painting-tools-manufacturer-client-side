@@ -8,7 +8,7 @@ const queryClient = new QueryClient();
 
 const ManageProducts = () => {
     const [deletingProduct, setDeletingProduct] = useState(null);
-    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('https://infinite-refuge-16711.herokuapp.com/item', {
+    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('https://paiting-tools-manufacturer-server-side.vercel.app/item', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }

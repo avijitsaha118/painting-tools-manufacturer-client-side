@@ -5,7 +5,7 @@ const useItems =()=>{
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch('https://infinite-refuge-16711.herokuapp.com/item')
+        fetch('https://paiting-tools-manufacturer-server-side.vercel.app/item')
             .then(res => res.json())
             .then(data => setItems(data))
     }, []);
