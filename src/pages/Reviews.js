@@ -7,7 +7,7 @@ const Reviews = () => {
         const [items, setItems] = useState([]);
     
         useEffect(() => {
-            fetch('https://paiting-tools-manufacturer-server-side.vercel.app/myreview')
+            fetch('http://localhost:5000/myreview')
                 .then(res => res.json())
                 .then(data => setItems(data))
         }, []);

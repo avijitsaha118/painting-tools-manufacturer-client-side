@@ -22,7 +22,7 @@ const BookingModal = ({ toolName, setToolName, refetch }) => {
 
         }
 
-        fetch('https://paiting-tools-manufacturer-server-side.vercel.app/booking', {
+        fetch('http://localhost:5000/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

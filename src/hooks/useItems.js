@@ -5,7 +5,7 @@ const useItems =()=>{
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch('https://paiting-tools-manufacturer-server-side.vercel.app/item')
+        fetch('http://localhost:5000/item')
             .then(res => res.json())
             .then(data => setItems(data))
     }, []);

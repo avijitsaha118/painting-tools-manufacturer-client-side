@@ -13,7 +13,7 @@ const CheckoutForm = ({ item }) => {
     const { _id, price, name, email } = item;
 
     useEffect(() => {
-        fetch('https://paiting-tools-manufacturer-server-side.vercel.app/create-payment-intent', {
+        fetch('http://localhost:5000/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -88,7 +88,7 @@ const CheckoutForm = ({ item }) => {
                   transactionId : paymentIntent.id
               }
 
-            fetch(`https://paiting-tools-manufacturer-server-side.vercel.app/booking/${_id}`, {
+            fetch(`http://localhost:5000/booking/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

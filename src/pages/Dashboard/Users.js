@@ -5,7 +5,7 @@ import UserRow from './../Dashboard//UserRow';
 
 const queryClient = new QueryClient();
 const Users = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://paiting-tools-manufacturer-server-side.vercel.app/user', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

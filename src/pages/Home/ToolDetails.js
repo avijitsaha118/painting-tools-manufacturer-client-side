@@ -32,7 +32,7 @@ const ToolDetails = () => {
 
         }
 
-            fetch(`https://paiting-tools-manufacturer-server-side.vercel.app/booking/${itemId}`,{
+            fetch(`http://localhost:5000/booking/${itemId}`,{
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

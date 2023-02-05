@@ -6,7 +6,7 @@ const DeleteConfirmation = ({ deletingProduct, refetch, setDeletingProduct  }) =
     const { name ,email } = deletingProduct;
 
     const handleDelete = () => {
-        fetch(`https://paiting-tools-manufacturer-server-side.vercel.app/item/${email}`, {
+        fetch(`http://localhost:5000/item/${email}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

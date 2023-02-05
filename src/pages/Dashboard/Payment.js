@@ -11,7 +11,7 @@ const queryClient = new QueryClient();
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `https://paiting-tools-manufacturer-server-side.vercel.app/booking/${id}`;
+    const url = `http://localhost:5000/booking/${id}`;
     const { data: item, isLoading } = useQuery(['booking', id], () => fetch(url, {
         method: 'GET',
         headers: {

@@ -7,7 +7,7 @@ const Profiles = () => {
         const [items, setItems] = useState([]);
     
         useEffect(() => {
-            fetch('https://paiting-tools-manufacturer-server-side.vercel.app/myprofile')
+            fetch('http://localhost:5000/myprofile')
                 .then(res => res.json())
                 .then(data => setItems(data))
         }, []);

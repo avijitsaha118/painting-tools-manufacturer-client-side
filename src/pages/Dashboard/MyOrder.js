@@ -11,7 +11,7 @@ const MyOrder = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`https://paiting-tools-manufacturer-server-side.vercel.app/booking?email=${user.email}`, {
+            fetch(`http://localhost:5000/booking?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

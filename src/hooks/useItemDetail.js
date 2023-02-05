@@ -5,7 +5,7 @@ const useItemDetail = itemId => {
     const [item, setItem] = useState({});
 
     useEffect(() => {
-        const url = `https://paiting-tools-manufacturer-server-side.vercel.app/item/${itemId}`;
+        const url = `http://localhost:5000/item/${itemId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data));
